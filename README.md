@@ -54,6 +54,7 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 ## Grafikët
 ### 1. Random Search
 Nota e secilit prej 10 roverave të rastësishëm. Notat janë të shpërndara dhe nuk përmirësohen me kohë, sepse algoritmi nuk mëson nga provat. Më i miri: 7.488.
+
 <img width="471" height="327" alt="random_search" src="https://github.com/user-attachments/assets/2201cf5a-3e6e-4d1f-8d25-c1c64ffac11f" />
 
 ### 2. Hill Climbing

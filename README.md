@@ -29,15 +29,16 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 | 02_Eksplorimi.ipynb | Hartat, koordinatat dhe rrugët e roverit |
 | 03_RandomSearch.ipynb | Algoritmi i parë: Random Search |
 | 04_KohaCPUvsGPU.ipynb | Matja e kohës: gjyqtari i ESA-s në CPU dhe prova CPU kundër GPU |
+| 05_HillClimbing.ipynb | Algoritmi i dytë: Hill Climbing (përmirësim hap pas hapi) |
 
 ## Rezultatet deri tani
 | Metoda | Nota më e mirë | Vlerësime | Koha |
 |---|---|---|---|
 | Roveri shembull i ESA-s | 7.98 | 1 | 24 s |
 | Random Search | 7.488 | 10 | 312 s |
+| Hill Climbing | 5.421 | 15 | 385 s |
 
 ## Hapat e ardhshëm
-- Hill Climbing
 - Algoritmi gjenetik
 - Strategjitë evolutive (CMA-ES)
 - Simulimi i shumë roverave njëkohësisht në GPU

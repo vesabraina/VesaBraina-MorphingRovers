@@ -52,8 +52,16 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 **Vërejtje për algoritmin gjenetik:** nota 4.739 u gjet në popullatën e parë (me mutacion të roverit të Hill Climbing). Gjatë 5 gjeneratave mesatarja e popullatës u përmirësua (nga 7.397 në 6.738), por roveri më i mirë jo. Me më shumë gjenerata, dhe me GPU, pritet përmirësim i mëtejshëm.
 
 ## Grafikët
+### 1. Random Search
+Nota e secilit prej 10 roverave të rastësishëm. Notat janë të shpërndara dhe nuk përmirësohen me kohë, sepse algoritmi nuk mëson nga provat. Më i miri: 7.488.
 <img width="471" height="327" alt="random_search" src="https://github.com/user-attachments/assets/2201cf5a-3e6e-4d1f-8d25-c1c64ffac11f" />
+
+### 2. Hill Climbing
+Nota më e mirë pas çdo hapi. Vija vetëm bie ose mbetet njësoj, sepse pranohen vetëm ndryshimet që e përmirësojnë roverin. Nga 7.98 në 5.421 me 15 vlerësime, pastaj ngeci (optimum lokal).
 <img width="471" height="327" alt="hill_climbing" src="https://github.com/user-attachments/assets/a42820f2-9b6f-4a95-9126-2e3435c6d77c" />
+
+### 3. Algoritmi gjenetik
+Nota më e mirë dhe mesatarja e popullatës për çdo gjeneratë. Më e mira (4.739) u gjet që në popullatën e parë dhe u ruajt falë elitizmit, ndërsa mesatarja ra nga 7.397 në 6.738, që tregon se e gjithë popullata po përmirësohej.
 <img width="471" height="327" alt="algoritmi_gjenetik png" src="https://github.com/user-attachments/assets/d2255078-6ac9-466c-b1a0-12bf868af777" />
 
 

@@ -59,10 +59,12 @@ Nota e secilit prej 10 roverave të rastësishëm. Notat janë të shpërndara d
 
 ### 2. Hill Climbing
 Nota më e mirë pas çdo hapi. Vija vetëm bie ose mbetet njësoj, sepse pranohen vetëm ndryshimet që e përmirësojnë roverin. Nga 7.98 në 5.421 me 15 vlerësime, pastaj ngeci (optimum lokal).
+
 <img width="471" height="327" alt="hill_climbing" src="https://github.com/user-attachments/assets/a42820f2-9b6f-4a95-9126-2e3435c6d77c" />
 
 ### 3. Algoritmi gjenetik
 Nota më e mirë dhe mesatarja e popullatës për çdo gjeneratë. Më e mira (4.739) u gjet që në popullatën e parë dhe u ruajt falë elitizmit, ndërsa mesatarja ra nga 7.397 në 6.738, që tregon se e gjithë popullata po përmirësohej.
+
 <img width="471" height="327" alt="algoritmi_gjenetik png" src="https://github.com/user-attachments/assets/d2255078-6ac9-466c-b1a0-12bf868af777" />
 
 

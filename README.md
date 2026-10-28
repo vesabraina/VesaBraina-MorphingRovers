@@ -33,6 +33,7 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 | 03_RandomSearch.ipynb | Algoritmi i parë: Random Search |
 | 04_KohaCPUvsGPU.ipynb | Matja e kohës: gjyqtari i ESA-s në CPU dhe prova CPU kundër GPU |
 | 05_HillClimbing.ipynb | Algoritmi i dytë: Hill Climbing (përmirësim hap pas hapi) |
+| 06_AlgoritmiGjenetik.ipynb | Algoritmi i tretë: Algoritmi gjenetik (popullatë, kryqëzim, mutacion), nis nga roveri i Hill Climbing |
 | checkpoints/ | Roverat më të mirë të ruajtur (.npy), që algoritmet e ardhshme të vazhdojnë prej tyre |
 | images/ | Grafikët e rezultateve |
 
@@ -42,10 +43,18 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 | Roveri shembull i ESA-s | 7.98 | 1 | 24 s |
 | Random Search | 7.488 | 10 | 312 s |
 | Hill Climbing | 5.421 | 15 | 385 s |
+| Algoritmi gjenetik | 4.739 | 38 | 775 s |
+
+**Rekordi në Leaderboard e ESA-s:** 1.856 (Team HRI)
+
+**CPU vs GPU (1000 rovera, shtresa Conv2d):** CPU 4.41 s, GPU 0.118 s, rreth 37 herë më shpejt.
+
+**Vërejtje për algoritmin gjenetik:** nota 4.739 u gjet në popullatën e parë (me mutacion të roverit të Hill Climbing). Gjatë 5 gjeneratave mesatarja e popullatës u përmirësua (nga 7.397 në 6.738), por roveri më i mirë jo. Me më shumë gjenerata, dhe me GPU, pritet përmirësim i mëtejshëm.
 
 ## Grafikët
 <img width="471" height="327" alt="random_search" src="https://github.com/user-attachments/assets/2201cf5a-3e6e-4d1f-8d25-c1c64ffac11f" />
 <img width="471" height="327" alt="hill_climbing" src="https://github.com/user-attachments/assets/a42820f2-9b6f-4a95-9126-2e3435c6d77c" />
+<img width="471" height="327" alt="algoritmi_gjenetik png" src="https://github.com/user-attachments/assets/d2255078-6ac9-466c-b1a0-12bf868af777" />
 
 
 ## Algoritmet dhe pse këto
@@ -72,6 +81,6 @@ simulimin që të vlerësojë shumë rovera përnjëherë.
 3. Run All. Notebook-et ekzekutohen me radhë sipas numrave.
 
 ## Hapat e ardhshëm
-- Algoritmi gjenetik
 - Strategjitë evolutive (CMA-ES)
 - Simulimi i shumë roverave njëkohësisht në GPU
+- Ekzekutimi më i gjatë i algoritmeve në GPU, për notë sa më afër rekordit

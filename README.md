@@ -28,6 +28,7 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 | 01_Setup.ipynb | Setup në Kaggle, testimi i roverit shembull të ESA-s |
 | 02_Eksplorimi.ipynb | Hartat, koordinatat dhe rrugët e roverit |
 | 03_RandomSearch.ipynb | Algoritmi i parë: Random Search |
+| 04_KohaCPUvsGPU.ipynb | Matja e kohës: gjyqtari i ESA-s në CPU dhe prova CPU kundër GPU |
 
 ## Rezultatet deri tani
 | Metoda | Nota më e mirë | Vlerësime | Koha |
@@ -36,7 +37,6 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 | Random Search | 7.488 | 10 | 312 s |
 
 ## Hapat e ardhshëm
-- Krahasimi i kohës CPU kundër GPU
 - Hill Climbing
 - Algoritmi gjenetik
 - Strategjitë evolutive (CMA-ES)

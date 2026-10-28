@@ -44,8 +44,8 @@ dhe ta bëjmë kërkimin më të shpejtë me GPU.
 | Hill Climbing | 5.421 | 15 | 385 s |
 
 ## Grafikët
-<img width="571" height="427" alt="random_search" src="https://github.com/user-attachments/assets/2201cf5a-3e6e-4d1f-8d25-c1c64ffac11f" />
-<img width="571" height="427" alt="hill_climbing" src="https://github.com/user-attachments/assets/a42820f2-9b6f-4a95-9126-2e3435c6d77c" />
+<img width="471" height="327" alt="random_search" src="https://github.com/user-attachments/assets/2201cf5a-3e6e-4d1f-8d25-c1c64ffac11f" />
+<img width="471" height="327" alt="hill_climbing" src="https://github.com/user-attachments/assets/a42820f2-9b6f-4a95-9126-2e3435c6d77c" />
 
 
 ## Algoritmet dhe pse këto

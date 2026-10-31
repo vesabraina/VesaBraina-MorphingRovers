@@ -28,14 +28,16 @@ dhe ta bëjmë kërkimin më të shpejtë.
 ## Struktura
 ```
 VesaBraina-MorphingRovers/
-├── notebooks/                      # Eksplorimi hap pas hapi
+├── notebooks/                      # Eksplorimi dhe eksperimentet
 │   ├── 01_Setup.ipynb              # Setup në Kaggle, roveri shembull i ESA-s
 │   ├── 02_Eksplorimi.ipynb         # Hartat, koordinatat, rrugët e roverit
 │   ├── 03_RandomSearch.ipynb       # Algoritmi 1: Random Search
 │   ├── 04_KohaCPUvsGPU.ipynb       # Matja e kohës CPU kundër GPU
 │   ├── 05_HillClimbing.ipynb       # Algoritmi 2: Hill Climbing
 │   ├── 06_AlgoritmiGjenetik.ipynb  # Algoritmi 3: Algoritmi gjenetik
-│   └── 07_CMAES.ipynb              # Algoritmi 4: CMA-ES (diagonal)
+│   ├── 07_CMAES.ipynb              # Algoritmi 4: CMA-ES (diagonal)
+│   ├── 08_Test.ipynb               # Testi i dataset-eve dhe vlerësimit paralel
+│   └── 09_Krahasimi.ipynb          # Krahasimi head to head i 4 algoritmeve
 ├── src/
 │   └── algoritmet.py               # Kodi final: 4 algoritmet + vlerësim paralel
 ├── checkpoints/                    # Roverat më të mirë (.npy)
@@ -43,7 +45,7 @@ VesaBraina-MorphingRovers/
 ├── requirements.txt                # Libraritë: numpy, torch, matplotlib, cma
 └── README.md
 ```
-Notebook-et 01-07 janë eksplorimi hap pas hapi; kodi final është në `src/algoritmet.py`.
+Notebook-et 01-07 janë eksplorimi hap pas hapi; nga 08 e tutje përdoret kodi final nga `src/algoritmet.py`.
 
 ## Rezultatet deri tani
 | Metoda | Nota më e mirë | Vlerësime | Koha |
@@ -52,7 +54,8 @@ Notebook-et 01-07 janë eksplorimi hap pas hapi; kodi final është në `src/alg
 | Random Search | 7.488 | 10 | 312 s |
 | Hill Climbing | 5.421 | 15 | 385 s |
 | Algoritmi gjenetik | 4.739 | 38 | 775 s |
-| CMA-ES | **4.618** | 30 | 818 s |
+| CMA-ES | 4.618 | 30 | 818 s |
+| Hill Climbing (head to head, paralel) | **4.010** | 41 | 470 s |
 
 **Vlerësimi paralel (4 procesorë):** 4 rovera në 39 s në vend të ~96 s, rreth 2.5 herë më shpejt, me notë identike me vlerësimin një nga një.
 
@@ -118,11 +121,11 @@ Plani: (1) vlerësimi i disa roverave njëkohësisht në 4 procesorët CPU të K
 (2) si bonus, rishkrimi i simulimit që GPU të lëvizë shumë rovera përnjëherë.
 
 ## Si ekzekutohet
-1. Hape notebook-un në Kaggle, Internet = On.
-2. Kutia e parë shkarkon kodin e ESA-s dhe rregullon dy gabime të vogla.
-3. Run All. Notebook-et ekzekutohen me radhë sipas numrave.
+1. Në Kaggle krijo 2 dataset-e: `morphing-rovers-kodi` (src/algoritmet.py) dhe `morphing-rovers-checkpoints` (fajllat .npy).
+2. Hape notebook-un, Internet = On, dhe shto të dy dataset-et me **Add Input**.
+3. Kutia e parë shkarkon kodin e ESA-s dhe rregullon dy gabime të vogla.
+4. Run All. Notebook-et ekzekutohen me radhë sipas numrave.
 
 ## Hapat e ardhshëm
-- Kodi i algoritmeve në src/algoritmet.py dhe dataset-e në Kaggle
-- Krahasimi head to head i 4 algoritmeve (e njëjta pikënisje, i njëjti numër vlerësimesh)
-- Ekzekutimi i gjatë i algoritmit fitues, për notë sa më afër rekordit
+- Ekzekutimi i gjatë (orë) i Hill Climbing nga roveri 4.010, për notë sa më afër rekordit
+- Simulimi i shumë roverave njëkohësisht në GPU (bonus)

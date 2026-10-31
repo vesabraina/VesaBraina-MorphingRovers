@@ -83,6 +83,20 @@ Provimi i parë me hap 0.3 nuk e përmirësoi roverin (4.828): fëmijët kishin 
 
 <img width="571" height="427" alt="cmaes png" src="https://github.com/user-attachments/assets/fca7e0dd-af1e-41e1-8798-3d6ae3f1f72a" />
 
+## Krahasimi head to head
+Të 4 algoritmet nisën nga i njëjti rover (nota 4.618) me të njëjtin buxhet: ~40 vlerësime, vlerësim paralel në 4 procesorë.
+
+| Algoritmi | Nota fillestare | Nota finale | Vlerësime | Koha (s) |
+|---|---|---|---|---|
+| Random Search | 4.618 | 4.618 | 41 | 553 |
+| Hill Climbing | 4.618 | **4.010** | 41 | 470 |
+| Algoritmi gjenetik | 4.618 | 4.206 | 43 | 500 |
+| CMA-ES | 4.618 | 4.535 | 41 | 453 |
+
+<img width="471" height="327" alt="krahasimi" src="https://github.com/user-attachments/assets/f266ab38-be3a-4c48-90a3-9559d5e5f495" />
+
+
+**Fituesi: Hill Climbing.** Me pak vlerësime, ndryshimet e vogla mbi roverin më të mirë japin përmirësimin më të shpejtë. Random Search nuk përmirëson asgjë, sepse rovera krejt të rastësishëm janë shumë më të këqij se një rover i mirë. Gjenetiku dhe CMA-ES kanë nevojë për më shumë gjenerata që të mësojnë.
 
 ## Algoritmet dhe pse këto
 Funksioni i vlerësimit është "kuti e zezë": simulim pa formulë dhe pa derivat.

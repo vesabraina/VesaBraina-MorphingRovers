@@ -72,7 +72,7 @@ Nota më e mirë dhe mesatarja e popullatës për çdo gjeneratë. Më e mira (4
 ### 4. CMA-ES
 Provimi i parë me hap 0.3 nuk e përmirësoi roverin (4.828): fëmijët kishin mesatarisht notë 9.5, sepse ndryshimi i 19 mijë numrave njëkohësisht me hap të madh e prish roverin. Me hap 0.02, nota ra nga 4.828 në **4.618** për 5 gjenerata. Mësimi: me kaq shumë numra, hapat duhet të jenë të vegjël.
 
-<img width="471" height="327" alt="cmaes png" src="https://github.com/user-attachments/assets/fca7e0dd-af1e-41e1-8798-3d6ae3f1f72a" />
+<img width="571" height="427" alt="cmaes png" src="https://github.com/user-attachments/assets/fca7e0dd-af1e-41e1-8798-3d6ae3f1f72a" />
 
 
 ## Algoritmet dhe pse këto

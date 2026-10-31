@@ -26,17 +26,24 @@ dhe ta bëjmë kërkimin më të shpejtë.
 - Algoritmet e optimizimit: puna ime
 
 ## Struktura
-| Notebook / Dosja | Përmbajtja |
-|---|---|
-| 01_Setup.ipynb | Setup në Kaggle, testimi i roverit shembull të ESA-s |
-| 02_Eksplorimi.ipynb | Hartat, koordinatat dhe rrugët e roverit |
-| 03_RandomSearch.ipynb | Algoritmi i parë: Random Search |
-| 04_KohaCPUvsGPU.ipynb | Matja e kohës: gjyqtari i ESA-s në CPU dhe prova CPU kundër GPU |
-| 05_HillClimbing.ipynb | Algoritmi i dytë: Hill Climbing (përmirësim hap pas hapi) |
-| 06_AlgoritmiGjenetik.ipynb | Algoritmi i tretë: Algoritmi gjenetik (popullatë, kryqëzim, mutacion), nis nga roveri i Hill Climbing |
-| 07_CMAES.ipynb | Algoritmi i katërt: CMA-ES (diagonal), nis nga roveri i algoritmit gjenetik |
-| checkpoints/ | Roverat më të mirë të ruajtur (.npy), që algoritmet e ardhshme të vazhdojnë prej tyre |
-| images/ | Grafikët e rezultateve |
+```
+VesaBraina-MorphingRovers/
+├── notebooks/                      # Eksplorimi hap pas hapi
+│   ├── 01_Setup.ipynb              # Setup në Kaggle, roveri shembull i ESA-s
+│   ├── 02_Eksplorimi.ipynb         # Hartat, koordinatat, rrugët e roverit
+│   ├── 03_RandomSearch.ipynb       # Algoritmi 1: Random Search
+│   ├── 04_KohaCPUvsGPU.ipynb       # Matja e kohës CPU kundër GPU
+│   ├── 05_HillClimbing.ipynb       # Algoritmi 2: Hill Climbing
+│   ├── 06_AlgoritmiGjenetik.ipynb  # Algoritmi 3: Algoritmi gjenetik
+│   └── 07_CMAES.ipynb              # Algoritmi 4: CMA-ES (diagonal)
+├── src/
+│   └── algoritmet.py               # Kodi final: 4 algoritmet + vlerësim paralel
+├── checkpoints/                    # Roverat më të mirë (.npy)
+├── images/                         # Grafikët e rezultateve
+├── requirements.txt                # Libraritë: numpy, torch, matplotlib, cma
+└── README.md
+```
+Notebook-et 01-07 janë eksplorimi hap pas hapi; kodi final është në `src/algoritmet.py`.
 
 ## Rezultatet deri tani
 | Metoda | Nota më e mirë | Vlerësime | Koha |

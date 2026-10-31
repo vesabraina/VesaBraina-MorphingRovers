@@ -54,6 +54,8 @@ Notebook-et 01-07 janë eksplorimi hap pas hapi; kodi final është në `src/alg
 | Algoritmi gjenetik | 4.739 | 38 | 775 s |
 | CMA-ES | **4.618** | 30 | 818 s |
 
+**Vlerësimi paralel (4 procesorë):** 4 rovera në 39 s në vend të ~96 s, rreth 2.5 herë më shpejt, me notë identike me vlerësimin një nga një.
+
 **Rekordi në Leaderboard e ESA-s:** 1.856 (Team HRI)
 
 **CPU vs GPU (1000 rovera, shtresa Conv2d):** CPU 4.41 s, GPU 0.118 s, rreth 37 herë më shpejt.

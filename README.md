@@ -19,6 +19,15 @@ Të gjejmë me algoritme optimizimi pa derivate roverin me notën më të ulët,
 t'i krahasojmë algoritmet (nota, numri i vlerësimeve, koha),
 dhe ta bëjmë kërkimin më të shpejtë.
 
+## Rruga e punës (4 faza)
+1. **Stafeta:** algoritmet u ekzekutuan njëri pas tjetrit, secili nga roveri më i mirë i atij para tij:
+   7.98 → Random Search 7.488 → Hill Climbing 5.421 → Algoritmi gjenetik 4.739 → CMA-ES **4.618**
+2. **Krahasimi head to head:** të 4 algoritmet nisën nga i njëjti rover (4.618) me të njëjtin buxhet (~40 vlerësime).
+   Fitoi Hill Climbing me **4.010**.
+3. **Gara e gjatë:** vetëm fituesi, 50 raunde (~6 orë) me hap 0.02: 4.010 → **2.6455**. Pas raundit 22 ngeci (optimum lokal).
+4. **Hill Climbing me hap të ndryshueshëm:** hapat 0.05 (për të dalë nga ngecja) dhe 0.01 (për rregullim të imët) me radhë.
+   Në vazhdim: 2.6455 → 2.5657 → ...
+
 ## Teknologjia dhe burimet
 - Gjuha: Python (Jupyter notebooks në Kaggle)
 - Përshkrimi i problemit: https://optimize.esa.int/challenge/spoc-2-morphing-rovers/About

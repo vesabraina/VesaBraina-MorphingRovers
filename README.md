@@ -68,6 +68,7 @@ Notebook-et 01-07 janë eksplorimi hap pas hapi; nga 08 e tutje përdoret kodi f
 | CMA-ES | 4.618 | 30 | 818 s |
 | Hill Climbing (head to head, paralel) | **4.010** | 41 | 470 s |
 | Hill Climbing i gjatë (zgjidhja finale) | **2.6455** | 2000 | ~5.8 orë |
+| Hill Climbing me hapa 0.05/0.01 | **2.5657** | 2000 | ~6 orë |
 
 **Vlerësimi paralel (4 procesorë):** 4 rovera në 39 s në vend të ~96 s, rreth 2.5 herë më shpejt, me notë identike me vlerësimin një nga një.
 

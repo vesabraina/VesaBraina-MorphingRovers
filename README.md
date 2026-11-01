@@ -37,9 +37,11 @@ VesaBraina-MorphingRovers/
 │   ├── 06_AlgoritmiGjenetik.ipynb  # Algoritmi 3: Algoritmi gjenetik
 │   ├── 07_CMAES.ipynb              # Algoritmi 4: CMA-ES (diagonal)
 │   ├── 08_Test.ipynb               # Testi i dataset-eve dhe vlerësimit paralel
-│   └── 09_Krahasimi.ipynb          # Krahasimi head to head i 4 algoritmeve
+│   ├── 09_Krahasimi.ipynb          # Krahasimi head to head i 4 algoritmeve
+│   └── 10_ZgjidhjaFinale.ipynb     # Hill Climbing i gjatë: 2.6455
 ├── src/
-│   └── algoritmet.py               # Kodi final: 4 algoritmet + vlerësim paralel
+│   ├── algoritmet.py               # Kodi final: 4 algoritmet + vlerësim paralel
+│   └── pergatitja.py               # Setup-i i ESA-s (clone + 2 rregullime)
 ├── checkpoints/                    # Roverat më të mirë (.npy)
 ├── images/                         # Grafikët e rezultateve
 ├── requirements.txt                # Libraritë: numpy, torch, matplotlib, cma
@@ -47,7 +49,7 @@ VesaBraina-MorphingRovers/
 ```
 Notebook-et 01-07 janë eksplorimi hap pas hapi; nga 08 e tutje përdoret kodi final nga `src/algoritmet.py`.
 
-## Rezultatet deri tani
+## Rezultatet
 | Metoda | Nota më e mirë | Vlerësime | Koha |
 |---|---|---|---|
 | Roveri shembull i ESA-s | 7.98 | 1 | 24 s |
@@ -56,6 +58,7 @@ Notebook-et 01-07 janë eksplorimi hap pas hapi; nga 08 e tutje përdoret kodi f
 | Algoritmi gjenetik | 4.739 | 38 | 775 s |
 | CMA-ES | 4.618 | 30 | 818 s |
 | Hill Climbing (head to head, paralel) | **4.010** | 41 | 470 s |
+| Hill Climbing i gjatë (zgjidhja finale) | **2.6455** | 2000 | ~5.8 orë |
 
 **Vlerësimi paralel (4 procesorë):** 4 rovera në 39 s në vend të ~96 s, rreth 2.5 herë më shpejt, me notë identike me vlerësimin një nga një.
 
@@ -101,6 +104,19 @@ Të 4 algoritmet nisën nga i njëjti rover (nota 4.618) me të njëjtin buxhet:
 
 **Fituesi: Hill Climbing.** Me pak vlerësime, ndryshimet e vogla mbi roverin më të mirë japin përmirësimin më të shpejtë. Random Search nuk përmirëson asgjë, sepse rovera krejt të rastësishëm janë shumë më të këqij se një rover i mirë. Gjenetiku dhe CMA-ES kanë nevojë për më shumë gjenerata që të mësojnë.
 
+## Zgjidhja finale
+Fituesin e krahasimit (Hill Climbing, 4.010) e vazhduam më gjatë:
+50 raunde × 40 vlerësime (hap sigma = 0.02), rreth 5.8 orë në Kaggle (Save Version).
+Çdo raund nis nga roveri më i mirë dhe e ruan në `checkpoints/final_best.npy`,
+kështu nuk humbet asgjë nëse Kaggle ndalet.
+
+**Rezultati: 4.010 → 2.6455**
+
+Vendi i 10 në leaderboard e ESA-s ka 2.685, pra zgjidhja jonë do të ishte në top 10. Rekordi është 1.856.
+Pas raundit 22 nota nuk u përmirësua më: Hill Climbing me hap 0.02 arriti optimumin lokal.
+
+Notebook: `notebooks/10_ZgjidhjaFinale.ipynb`
+
 ## Algoritmet dhe pse këto
 Funksioni i vlerësimit është "kuti e zezë": simulim pa formulë dhe pa derivat.
 Prandaj nuk mund të përdoren gradient descent, programimi dinamik apo brute force
@@ -121,11 +137,11 @@ Plani: (1) vlerësimi i disa roverave njëkohësisht në 4 procesorët CPU të K
 (2) si bonus, rishkrimi i simulimit që GPU të lëvizë shumë rovera përnjëherë.
 
 ## Si ekzekutohet
-1. Në Kaggle krijo 2 dataset-e: `morphing-rovers-kodi` (src/algoritmet.py) dhe `morphing-rovers-checkpoints` (fajllat .npy).
+1. Në Kaggle krijo 2 dataset-e: `morphing-rovers-kodi` (src/algoritmet.py + src/pergatitja.py) dhe `morphing-rovers-checkpoints` (fajllat .npy).
 2. Hape notebook-un, Internet = On, dhe shto të dy dataset-et me **Add Input**.
-3. Kutia e parë shkarkon kodin e ESA-s dhe rregullon dy gabime të vogla.
+3. Kutia e parë shkarkon kodin e ESA-s dhe rregullon dy gabime të vogla. Nga notebook 10, kjo bëhet me 1 rresht: `pergatit_esa()` nga `src/pergatitja.py`.
 4. Run All. Notebook-et ekzekutohen me radhë sipas numrave.
 
 ## Hapat e ardhshëm
-- Ekzekutimi i gjatë (orë) i Hill Climbing nga roveri 4.010, për notë sa më afër rekordit
 - Simulimi i shumë roverave njëkohësisht në GPU (bonus)
+- Provë me hap më të madh/më të vogël për të dalë nga optimumi lokal 2.6455

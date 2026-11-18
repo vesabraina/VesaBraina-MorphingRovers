@@ -19,14 +19,16 @@ Të gjejmë me algoritme optimizimi pa derivate roverin me notën më të ulët,
 t'i krahasojmë algoritmet (nota, numri i vlerësimeve, koha),
 dhe ta bëjmë kërkimin më të shpejtë.
 
-## Rruga e punës (4 faza)
+## Rruga e punës (5 faza)
 1. **Stafeta:** algoritmet u ekzekutuan njëri pas tjetrit, secili nga roveri më i mirë i atij para tij:
    7.98 → Random Search 7.488 → Hill Climbing 5.421 → Algoritmi gjenetik 4.739 → CMA-ES **4.618**
 2. **Krahasimi head to head:** të 4 algoritmet nisën nga i njëjti rover (4.618) me të njëjtin buxhet (~40 vlerësime).
    Fitoi Hill Climbing me **4.010**.
 3. **Gara e gjatë:** vetëm fituesi, 50 raunde (~6 orë) me hap 0.02: 4.010 → **2.6455**. Pas raundit 22 ngeci (optimum lokal).
 4. **Hill Climbing me hap të ndryshueshëm:** hapat 0.05 (për të dalë nga ngecja) dhe 0.01 (për rregullim të imët) me radhë.
-   Në vazhdim: 2.6455 → 2.5657 → ...
+    Rezultati: 2.6455 → **2.5657**, pastaj ngeci përsëri.
+5. **CMA-ES nga zgjidhja më e mirë:** CMA-ES me hap 0.01 nisi nga 2.5657 dhe arriti në **2.5059**.
+   CMA-ES mëson drejtimin ku ia vlen të lëvizë, prandaj doli nga ngecja ku ishte Hill Climbing.
 
 ## Teknologjia dhe burimet
 - Gjuha: Python (Jupyter notebooks në Kaggle)
@@ -47,7 +49,9 @@ VesaBraina-MorphingRovers/
 │   ├── 07_CMAES.ipynb              # Algoritmi 4: CMA-ES (diagonal)
 │   ├── 08_Test.ipynb               # Testi i dataset-eve dhe vlerësimit paralel
 │   ├── 09_Krahasimi.ipynb          # Krahasimi head to head i 4 algoritmeve
-│   └── 10_ZgjidhjaFinale.ipynb     # Hill Climbing i gjatë: 2.6455
+│   ├── 10_ZgjidhjaFinale.ipynb     # Hill Climbing i gjatë: 2.6455
+│   ├── 11_ZgjidhjaFinale2.ipynb    # Hill Climbing me hapa 0.05/0.01: 2.5657
+│   └── 12_CMAES_Finale.ipynb       # CMA-ES nga 2.5657: 2.5059
 ├── src/
 │   ├── algoritmet.py               # Kodi final: 4 algoritmet + vlerësim paralel
 │   └── pergatitja.py               # Setup-i i ESA-s (clone + 2 rregullime)
@@ -69,6 +73,7 @@ Notebook-et 01-07 janë eksplorimi hap pas hapi; nga 08 e tutje përdoret kodi f
 | Hill Climbing (head to head, paralel) | **4.010** | 41 | 470 s |
 | Hill Climbing i gjatë (zgjidhja finale) | **2.6455** | 2000 | ~5.8 orë |
 | Hill Climbing me hapa 0.05/0.01 | **2.5657** | 2000 | ~6 orë |
+| CMA-ES nga 2.5657 (sigma 0.01) | **2.5059** | 2000 | ~5.7 orë |
 
 **Vlerësimi paralel (4 procesorë):** 4 rovera në 39 s në vend të ~96 s, rreth 2.5 herë më shpejt, me notë identike me vlerësimin një nga një.
 
@@ -119,6 +124,7 @@ Fituesin e krahasimit (Hill Climbing, 4.010) e vazhduam më gjatë:
 50 raunde × 40 vlerësime (hap sigma = 0.02), rreth 5.8 orë në Kaggle (Save Version).
 Çdo raund nis nga roveri më i mirë dhe e ruan në `checkpoints/final_best.npy`,
 kështu nuk humbet asgjë nëse Kaggle ndalet.
+Më pas e vazhduam në dy faza të tjera: Hill Climbing me hapa 0.05/0.01 (2.5657) dhe CMA-ES me hap 0.01 (**2.5059**). Kjo është zgjidhja jonë më e mirë.
 
 **Rezultati: 4.010 → 2.6455**
 
@@ -154,4 +160,4 @@ Plani: (1) vlerësimi i disa roverave njëkohësisht në 4 procesorët CPU të K
 
 ## Hapat e ardhshëm
 - Simulimi i shumë roverave njëkohësisht në GPU (bonus)
-- Provë me hap më të madh/më të vogël për të dalë nga optimumi lokal 2.6455
+- Provë të tjera për të dalë nga optimumi lokal 2.5059
